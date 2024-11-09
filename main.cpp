@@ -1,5 +1,6 @@
+
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 #include <string>
 
 
@@ -13,11 +14,22 @@ int main(int argc, char** argv){
     bool run = true;
     int player = 1;
     int result = 0;
+    int c, valeur;
     drawGrid(grille);
-
+    std::cout << "1 : J1 VS IA\n";
+    std::cout << "2 : J1 VS J2\n";
+    std::cout << "Veuillez choisir votre mode de jeu : ";
+    std::cin >> c;
     while (run){
-        std::cout << "player_" << player << " -> col : \n";
-        std::cin >> choix;
+        if(c == 1 && player == 2){
+            valeur = rand() % 7 + 1;
+            choix = std::to_string(valeur);
+            std::cout << choix << "\n";
+        }
+        else {
+            std::cout << "player_" << player << " -> col : \n";
+            std::cin >> choix;
+        }
 
         if (choix == "exit"){
             break;
@@ -54,7 +66,7 @@ int main(int argc, char** argv){
             std::cout << "Player_2 a gagne\n";
         }
         else{
-            std::cout << "continuer";
+            std::cout << "\n";
         }
     }
     return 0;
