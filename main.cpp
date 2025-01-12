@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -22,12 +21,12 @@ int main(int argc, char** argv){
     std::cin >> c;
     while (run){
         if(c == 1 && player == 2){
-            valeur = rand() % 7 + 1;
+            valeur = rand() % 8 + 0;
             choix = std::to_string(valeur);
             std::cout << choix << "\n";
         }
         else {
-            std::cout << "player_" << player << " -> col : \n";
+            std::cout << "player_" << player << " -> col : ";
             std::cin >> choix;
         }
 
